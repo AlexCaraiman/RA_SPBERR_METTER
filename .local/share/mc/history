@@ -1,0 +1,33 @@
+[mc.esc.timeout]
+0=1000000
+
+[cmdline]
+0=settime.py 
+1=mc
+2=[21~
+3=[14~
+4=
+
+[inpmc.fm.mkdir]
+0=git
+
+[input-def]
+0=*
+
+[input2]
+0=git
+1=work
+
+[Dir Hist New Right Panel]
+0=/var/lib/ntp
+1=/var/lib
+2=/var
+3=/
+4=/etc
+5=/root
+
+[Dir Hist New Left Panel]
+0=/
+1=/root/git
+2=/root
+3=/root/work
