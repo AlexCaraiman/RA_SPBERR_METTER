@@ -6,6 +6,7 @@ import datetime
 from datetime import timedelta
 import RPi.GPIO as GPIO
 import subprocess
+import serial
 
 bus = smbus.SMBus(1)  # bus number 2
 address = 0x68
@@ -21,6 +22,13 @@ if not tempSgn: temp=-temp
 tempStr=str(temp)
 
 subprocess.call(["mosquitto_pub","-h","api.cosm.com","-u","QDMFqFHDe26IU9zUyS2A0R2sR5SSAKxQanI3YUozVDJaOD0g","-t","/v2/feeds/126698/datastreams/0.csv","-m",tempStr])
+
+#ser = serial.Serial("/dev/ttyAMA0")
+#ser.write("...")
+#pulsecount = ser.read()
+#ser.close()
+
+#subprocess.call(["mosquitto_pub","-h","api.cosm.com","-u","QDMFqFHDe26IU9zUyS2A0R2sR5SSAKxQanI3YUozVDJaOD0g","-t","/v2/feeds/126698/datastreams/1.csv","-m",pulsecount])
 
 GPIO.setmode(GPIO.BCM)
 GPIO.setup(17, GPIO.OUT)
